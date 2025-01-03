@@ -28,6 +28,9 @@ jobs:
       - name: Add 404.html for Angular routing
         run: cp dist/browser/index.html dist/browser/404.html
 
+      - name: Disable Jekyll for GitHub Pages
+        run: echo "" > dist/browser/.nojekyll
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
