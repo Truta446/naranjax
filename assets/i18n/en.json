@@ -1,5 +1,38 @@
 {
   "sidenav": {
-    "welcome": "Welcome"
+    "dashboard": "Dashboard",
+    "welcome": "Welcome",
+    "monitor": "Monitor",
+    "workspace": "Workspace",
+    "form": "Form",
+    "basic_form": "Basic Form",
+    "lang": {
+      "english": "English",
+      "spanish": "Spanish",
+      "portuguese": "Portuguese"
+    }
+  },
+  "welcome": {
+    "title": "Dynamic Data"
+  },
+  "monitor": {
+    "active": "Active",
+    "idle": "Idle"
+  },
+  "workspace": {
+    "name": "Name",
+    "gender": "Gender",
+    "email": "Email"
+  },
+  "form": {
+    "username": "Username",
+    "password": "Password",
+    "remember_me": "Remember me",
+    "forgot_password": "Forgot password",
+    "login": "Log in",
+    "or": "Or",
+    "register_now": "Register now!",
+    "password_error_message": "Please input your username!",
+    "username_error_message": "Please input your Password!"
   }
 }
