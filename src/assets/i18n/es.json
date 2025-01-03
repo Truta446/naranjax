@@ -1,5 +1,38 @@
 {
   "sidenav": {
-    "welcome": "Bienvenido"
+    "dashboard": "Panel de Control",
+    "welcome": "Bienvenido",
+    "monitor": "Monitoreo",
+    "workspace": "Oficina",
+    "form": "Formulario",
+    "basic_form": "Formulario Básico",
+    "lang": {
+      "english": "Inglés",
+      "spanish": "Español",
+      "portuguese": "Portugués"
+    }
+  },
+  "welcome": {
+    "title": "Datos Dinámicos"
+  },
+  "monitor": {
+    "active": "Activo",
+    "idle": "Inactivo"
+  },
+  "workspace": {
+    "name": "Nombre",
+    "gender": "Género",
+    "email": "Correo Electrónico"
+  },
+  "form": {
+    "username": "Usuario",
+    "password": "Contraseña",
+    "remember_me": "Recordarme",
+    "forgot_password": "¿Olvidaste tu contraseña?",
+    "login": "Iniciar sesión",
+    "or": "O",
+    "register_now": "¡Regístrate ahora!",
+    "password_error_message": "¡Por favor ingrese su nombre de usuario!",
+    "username_error_message": "¡Por favor ingrese su contraseña!"
   }
 }

@@ -1,5 +1,38 @@
 {
   "sidenav": {
-    "welcome": "Bem-vindo"
+    "dashboard": "Painel",
+    "welcome": "Bem-vindo",
+    "monitor": "Monitor",
+    "workspace": "Área de trabalho",
+    "form": "Formulário",
+    "basic_form": "Básico",
+    "lang": {
+      "english": "Inglês",
+      "spanish": "Espanhol",
+      "portuguese": "Portuguềs"
+    }
+  },
+  "welcome": {
+    "title": "Dados dinâmicos"
+  },
+  "monitor": {
+    "active": "Ativo",
+    "idle": "Inativo"
+  },
+  "workspace": {
+    "name": "Nome",
+    "gender": "Gênero",
+    "email": "Email"
+  },
+  "form": {
+    "username": "Usuário",
+    "password": "Senha",
+    "remember_me": "Lembrar",
+    "forgot_password": "Esqueci minha senha",
+    "login": "Entrar",
+    "or": "Ou",
+    "register_now": "Cadastre-se agora",
+    "password_error_message": "Por favor insira seu nome de usuário!",
+    "username_error_message": "Por favor insira sua senha!"
   }
 }

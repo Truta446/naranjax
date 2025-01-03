@@ -8,7 +8,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
 })
-export class PrimaryButtonComponent {
+export class ButtonComponent {
   @Input() public type: NzButtonType = 'primary';
   @Input() public icon?: string = '';
   @Input() public block?: boolean = false;
