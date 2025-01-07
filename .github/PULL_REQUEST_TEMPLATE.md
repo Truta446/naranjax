@@ -6,7 +6,7 @@
 
 [ID](link da historia)
 
-## Checklist desenvolvimento.
+## Checklist desenvolvimento
 
 - [ ] Meu código evita a repetição de css, utilizando as classes do styles.scss ?
 - [ ] Meu código esta usando as classes de texto do figma ? ex: T4, SH4, H6 ?
