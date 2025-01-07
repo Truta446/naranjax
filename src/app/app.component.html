@@ -1,68 +1,9 @@
 <nz-layout class="app-layout">
-  <nz-sider
-    class="menu-sidebar"
-    nzCollapsible
-    nzWidth="256px"
-    nzBreakpoint="md"
-    [(nzCollapsed)]="isCollapsed"
-    [nzTrigger]="null"
-  >
-    <div class="sidebar-logo">
-      <a href="https://www.naranjax.com/" target="_blank">
-        <img
-          [src]="
-            !isCollapsed
-              ? 'https://images.ctfassets.net/yxlyq25bynna/5aunl52F9uDLxXLUC8L7O4/d26d75c924a4cbd4cda5579f3c19d889/155x36px_.png?fm=webp&w=155'
-              : 'assets/images/logo.png'
-          "
-          alt="logo"
-        />
-      </a>
-    </div>
-
-    @if (!isCollapsed) {
-      <div class="sidebar-logo">
-        <form nz-form [formGroup]="langForm">
-          <nz-form-item>
-            <nz-form-control [nzSpan]="12">
-              <nz-select id="lang" formControlName="lang">
-                <nz-option nzValue="en" nzLabel="{{ 'sidenav.lang.english' | translate }}"></nz-option>
-                <nz-option nzValue="es" nzLabel="{{ 'sidenav.lang.spanish' | translate }}"></nz-option>
-                <nz-option nzValue="pt" nzLabel="{{ 'sidenav.lang.portuguese' | translate }}"></nz-option>
-              </nz-select>
-            </nz-form-control>
-          </nz-form-item>
-        </form>
-      </div>
-    }
-
-    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="{{ 'sidenav.dashboard' | translate }}" nzIcon="dashboard">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/dashboard/welcome">{{ 'sidenav.welcome' | translate }}</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/dashboard/monitor">{{ 'sidenav.monitor' | translate }}</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/dashboard/workspace">{{ 'sidenav.workspace' | translate }}</a>
-          </li>
-        </ul>
-      </li>
-      <li nz-submenu nzOpen nzTitle="{{ 'sidenav.form' | translate }}" nzIcon="form">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/form/basic">{{ 'sidenav.basic_form' | translate }}</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nz-sider>
+  <app-sidenav />
   <nz-layout>
     <nz-header>
       <div class="app-header">
-        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+        <span class="header-trigger" (click)="handleMenu()">
           <nz-icon class="trigger" [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" />
         </span>
       </div>

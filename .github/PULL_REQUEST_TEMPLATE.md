@@ -6,7 +6,7 @@
 
 [ID](link da historia)
 
-## Checklist desenvolvimento.
+## Checklist desenvolvimento
 
 - [ ] Meu código evita a repetição de css, utilizando as classes do styles.scss ?
 - [ ] Meu código esta usando as classes de texto do figma ? ex: T4, SH4, H6 ?
@@ -15,7 +15,3 @@
 - [ ] Meu código esta utilizando os componentes shared ao invés de tags html ?
 - [ ] Meu layout confere com o do figma ?
 - [ ] Meu código tem log sem usabilidade ?
-
-## Documentação
-
-[Arquitetura e Coding Guideline - Gen](https://www.notion.so/seja-gen/Arquitetura-e-Coding-Guideline-Gen-1f892cf358d04f268e428737e996f504)

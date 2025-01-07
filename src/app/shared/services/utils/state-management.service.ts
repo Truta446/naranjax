@@ -4,5 +4,5 @@ import { Injectable, signal, WritableSignal } from '@angular/core';
   providedIn: 'root',
 })
 export class StateManagementService {
-  public isLoading: WritableSignal<boolean> = signal(false);
+  public isCollapsed: WritableSignal<boolean> = signal(false);
 }
