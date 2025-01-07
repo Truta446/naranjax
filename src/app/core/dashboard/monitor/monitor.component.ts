@@ -13,6 +13,4 @@ import { NzStatisticModule } from 'ng-zorro-antd/statistic';
   templateUrl: './monitor.component.html',
   styleUrl: './monitor.component.scss',
 })
-export class MonitorComponent {
-  constructor() {}
-}
+export class MonitorComponent {}

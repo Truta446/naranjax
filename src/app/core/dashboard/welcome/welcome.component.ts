@@ -6,13 +6,9 @@ import { BarChart, LineChart } from 'echarts/charts';
 import { GridComponent, TooltipComponent, LegendComponent, TitleComponent } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
 import { TranslateService } from '@ngx-translate/core';
+import { ChartData } from '../../../shared/models/chart/chart.model';
 
 echarts.use([BarChart, GridComponent, TooltipComponent, LegendComponent, CanvasRenderer, TitleComponent, LineChart]);
-
-type DataT = {
-  name: string;
-  value: [string, number];
-};
 
 @Component({
   selector: 'app-welcome',
@@ -22,18 +18,17 @@ type DataT = {
   providers: [provideEchartsCore({ echarts })],
 })
 export class WelcomeComponent implements OnInit, OnDestroy {
-  options!: echarts.EChartsCoreOption;
-  updateOptions!: echarts.EChartsCoreOption;
+  public options!: echarts.EChartsCoreOption;
+  public updateOptions!: echarts.EChartsCoreOption;
 
-  private oneDay = 24 * 3600 * 1000;
+  private oneDay: number = 24 * 3600 * 1000;
   private now?: Date;
   private value?: number;
-  private data?: DataT[];
+  private data?: ChartData[];
   private timer: any;
   private translate: TranslateService = inject(TranslateService);
 
   public ngOnInit(): void {
-    // generate some random testing data:
     this.data = [];
     this.now = new Date(1997, 9, 3);
     this.value = Math.random() * 1000;
@@ -42,7 +37,6 @@ export class WelcomeComponent implements OnInit, OnDestroy {
       this.data.push(this.randomData());
     }
 
-    // initialize chart options:
     this.options = {
       title: {
         text: this.translate.instant('welcome.title'),
@@ -81,14 +75,12 @@ export class WelcomeComponent implements OnInit, OnDestroy {
       ],
     };
 
-    // Mock dynamic data:
     this.timer = setInterval(() => {
       for (let i = 0; i < 5; i++) {
         this.data?.shift();
         this.data?.push(this.randomData());
       }
 
-      // update series data:
       this.updateOptions = {
         series: [
           {
@@ -103,9 +95,10 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     clearInterval(this.timer);
   }
 
-  public randomData(): DataT {
+  public randomData(): ChartData {
     this.now = new Date(this.now!.getTime() + this.oneDay);
     this.value = this.value! + Math.random() * 21 - 10;
+
     return {
       name: this.now.toString(),
       value: [[this.now.getFullYear(), this.now.getMonth() + 1, this.now.getDate()].join('/'), Math.round(this.value)],

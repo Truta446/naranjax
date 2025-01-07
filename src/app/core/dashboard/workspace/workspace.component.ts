@@ -1,18 +1,8 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzTableModule, NzTableQueryParams } from 'ng-zorro-antd/table';
-import { catchError, Observable, of } from 'rxjs';
-
-interface RandomUser {
-  gender: string;
-  email: string;
-  name: {
-    title: string;
-    first: string;
-    last: string;
-  };
-}
+import { UserModel } from '../../../shared/models/user/user.model';
+import { UserService } from '../../../shared/services/user/user.service';
 
 @Component({
   selector: 'app-workspace',
@@ -21,17 +11,17 @@ interface RandomUser {
   styleUrl: './workspace.component.scss',
 })
 export class WorkspaceComponent implements OnInit {
-  public total = 1;
-  public listOfRandomUser: RandomUser[] = [];
-  public loading = true;
-  public pageSize = 10;
-  public pageIndex = 1;
-  public filterGender = [
+  public total: number = 1;
+  public listOfRandomUser: UserModel[] = [];
+  public loading: boolean = true;
+  public pageSize: number = 10;
+  public pageIndex: number = 1;
+  public filterGender: any = [
     { text: 'male', value: 'male' },
     { text: 'female', value: 'female' },
   ];
 
-  private http: HttpClient = inject(HttpClient);
+  private $user: UserService = inject(UserService);
 
   public loadDataFromServer(
     pageIndex: number,
@@ -41,9 +31,10 @@ export class WorkspaceComponent implements OnInit {
     filter: Array<{ key: string; value: string[] }>
   ): void {
     this.loading = true;
-    this.getUsers(pageIndex, pageSize, sortField, sortOrder, filter).subscribe((data) => {
+
+    this.$user.getUsers(pageIndex, pageSize, sortField, sortOrder, filter).subscribe((data) => {
       this.loading = false;
-      this.total = 200; // mock the total data here
+      this.total = 200;
       this.listOfRandomUser = data.results;
     });
   }
@@ -53,32 +44,11 @@ export class WorkspaceComponent implements OnInit {
     const currentSort = sort.find((item) => item.value !== null);
     const sortField = (currentSort && currentSort.key) || null;
     const sortOrder = (currentSort && currentSort.value) || null;
+
     this.loadDataFromServer(pageIndex, pageSize, sortField, sortOrder, filter);
   }
 
   public ngOnInit(): void {
     this.loadDataFromServer(this.pageIndex, this.pageSize, null, null, []);
-  }
-
-  public getUsers(
-    pageIndex: number,
-    pageSize: number,
-    sortField: string | null,
-    sortOrder: string | null,
-    filters: Array<{ key: string; value: string[] }>
-  ): Observable<{ results: RandomUser[] }> {
-    let params = new HttpParams()
-      .append('page', `${pageIndex}`)
-      .append('results', `${pageSize}`)
-      .append('sortField', `${sortField}`)
-      .append('sortOrder', `${sortOrder}`);
-    filters.forEach((filter) => {
-      filter.value.forEach((value) => {
-        params = params.append(filter.key, value);
-      });
-    });
-    return this.http
-      .get<{ results: RandomUser[] }>('https://api.randomuser.me/', { params })
-      .pipe(catchError(() => of({ results: [] })));
   }
 }

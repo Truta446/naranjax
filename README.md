@@ -1,5 +1,7 @@
 # Naranjax
 
+![Logo](https://images.ctfassets.net/yxlyq25bynna/51GkzeNqwLrOzm9osW1h3a/d713d4c2346b90be4987039051f10ff8/NX_LandingComercios_H-v1.png?fm=webp&w=1450)
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
 
 ## Development server
@@ -7,7 +9,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 To start a local development server, run:
 
 ```bash
-ng serve
+npm start
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
@@ -20,18 +22,12 @@ Angular CLI includes powerful code scaffolding tools. To generate a new componen
 ng generate component component-name
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
 ## Building
 
 To build the project run:
 
 ```bash
-ng build
+npm run build
 ```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
@@ -41,19 +37,18 @@ This will compile your project and store the build artifacts in the `dist/` dire
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
 ```bash
-ng test
+npm run test:watch
 ```
 
-## Running end-to-end tests
+## Contributing
 
-For end-to-end (e2e) testing, run:
+If you would like to contribute to this project, please follow these steps:
 
-```bash
-ng e2e
-```
+1. Create a new branch: "git checkout -b feature/SCH-72-your-feature";
+2. Make your changes and commit them: "git commit -am 'feat(prettier): describe your feature.'";
+3. Push to the branch: "git push origin feature/SCH-72-your-feature";
+4. Create a pull request.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Authors
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [@truta446](https://www.github.com/truta446)
